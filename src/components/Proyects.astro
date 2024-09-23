@@ -1,0 +1,58 @@
+---
+const projects = [
+  {
+    title: "Proyecto 1",
+    description: "Descripcion del proyecto 1",
+    image: "/imagenes/valmari.webp",
+    url: "https://www.google.com",
+  },
+  {
+    title: "Proyecto 2",
+    description: "Descripcion del proyecto 2",
+    image: "/img/proyect2.jpg",
+    url: "https://www.google.com",
+  },
+  {
+    title: "Proyecto 3",
+    description: "Descripcion del proyecto 3",
+    image: "/img/proyect3.jpg",
+    url: "https://www.google.com",
+  },
+  {
+    title: "Proyecto 4",
+    description: "Descripcion del proyecto 4",
+    image: "/img/proyect4.jpg",
+    url: "https://www.google.com",
+  },
+];
+---
+
+<section>
+  <h2 class="mb-6">Aprendi el concepto de crear divs internos para darle su espacio dentro de cada articulo</h2>
+  <br>
+  <h2 class=" mb-6">Tambirn aprendiomos el concepto de "GROPU" en esete pryecto cada articulo tiene un grupo de elementos, divs, h4, h3 etc... Esto nos sirve para indicar a cada elemento de forma individaul que tiene que hacer cuando el Articulo que contiene grupo esta en estado hover, ejemplo: </h2> <span class=" text-purple-600 font-bold" >h3: group-hover: translate-x-8</span>
+
+  {
+    projects.map((project) => (
+      <article class="relative   border-t-2 last:border-b-2 border-l-2 border-r-2 border-black ">
+        <button class=" group h-48 w-full  flex">
+          <div class="-z-20 absolute left-0  h-48 w-[60px] bg-primary group-hover:w-full transition-all duration-700 ease-out" />
+          <div
+            class={`  absolute    h-full w-full  bg-cover bg-center bg-no-repeat
+          opacity-0  transition-opacity duration-700 ease-in  -z-10 delay-700
+          group-hover:opacity-100 `}
+          style={`background-image: url(${project.image}) `}
+          />
+          <div class=" absolute top-6 left-16  ">
+            <h3 class=" uppercase tracking-tighter text-4xl md:text-6xl font-bold group-hover:translate-x-8 ease-out transition-transform">
+              {project.title}
+              <h4 class="uppercase tracking-tighter text-xl md:text-2xl font-bold group-hover:opacity-0 transition-opacity ease-out">
+                {project.description}
+              </h4>
+            </h3>
+          </div>
+        </button>
+      </article>
+    ))
+  }
+</section>
