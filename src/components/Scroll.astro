@@ -1,0 +1,33 @@
+<section class="w-full flex overflow-x-hidden relative">
+  <div id="texto-div" class="flex -ml-12">
+    <img src="/public/team/Alanpro.svg" alt="svg">
+    <img src="/public/team/Alanpro.svg" alt="svg">
+    
+  </div>
+
+  <div class=" absolute inset-0 flex justify-center items-center text-primary">
+    <button
+      class={` uppercase text-transparent   text-sm md:text-2xl font-bold tracking-tighter text-center rounded-full  w-32 h-32 md:w-72 md:h-72 border-[1px]  border-primary border-solid hover:bg-primary hover:text-black trasnition-all duration-700 ease-out`}
+    >
+      ¿ Quien soy ?
+    </button>
+  </div>
+</section>
+
+<style>
+  img {
+    width: 210vw;
+    max-width: 210vw;
+  }
+
+  #texto-div {
+    transition-duration: 15s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.32, 0.01, 0.64, 0.99);
+    /* ubicar el cubic bezier extraido del figma aportado por Miguel Ángel Duran  */
+  }
+
+  section:hover #texto-div {
+    transform: translateX(-76%);
+  }
+</style>
